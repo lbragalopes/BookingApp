@@ -1,5 +1,7 @@
-﻿using BookingApp.Flight.API.Application.GetAvailableFlights;
+﻿using BookingApp.Flight.API.Application.CreateFlight;
+using BookingApp.Flight.API.Application.GetAvailableFlights;
 using BookingApp.Flight.API.Application.GetFlightById;
+using BookingApp.Flight.API.Application.UpdateFlight;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +38,26 @@ namespace BookingApp.Flight.API.Controllers
         public async Task<ActionResult> GetById([FromRoute] GetFlightByIdQ query, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(query, cancellationToken);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+         public async Task<ActionResult> Create([FromBody] CreateFlightCommand command, CancellationToken cancellationToken)
+        {
+            var result = await mediator.Send(command, cancellationToken);
+
+            return Ok(result);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> Update(UpdateFlightCommand command, CancellationToken cancellationToken)
+        {
+            var result = await mediator.Send(command, cancellationToken);
+
             return Ok(result);
         }
 

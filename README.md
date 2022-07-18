@@ -1,5 +1,5 @@
 # Tech Woman Summit Avanade .NET
-Projeto baseado nos conceitos, configurações e arquitetura apresentados durante o Tech Woman Summit Avanade .NET. 
+Projeto baseado nos conceitos, configurações e arquitetura apresentados no Tech Woman Summit Avanade .NET. 
 
 ![image](https://user-images.githubusercontent.com/83672645/179430951-f03f63a9-3734-4f95-a1c0-6a223d9a5e0d.png)
 

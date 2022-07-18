@@ -26,6 +26,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\core\BookingApp.Bus\BookingApp.Bus.csproj" />
     <ProjectReference Include="..\..\..\core\BookingApp.Core\BookingApp.Core.csproj" />
+    <ProjectReference Include="..\..\booking\BookingApp.Booking.API\BookingApp.Booking.API.csproj" />
+    <ProjectReference Include="..\..\booking\BookingApp.Booking.Infra\BookingApp.Booking.Infra.csproj" />
     <ProjectReference Include="..\BookingApp.Flight.Infra\BookingApp.Flight.Infra.csproj" />
   </ItemGroup>
 

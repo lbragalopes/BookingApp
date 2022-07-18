@@ -38,5 +38,5 @@ namespace BookingApp.Flight.API.Controllers
             var result = await mediator.Send(command, cancellationToken);
             return Ok(result);
         }
-    }
+   }
 }

@@ -10,7 +10,7 @@ namespace BookingApp.Fligth.Domain.Flights
 {
     public class Flight : Aggregate<long>
     {
-        public string FlightNumber { get; private set; }
+        public string? FlightNumber { get; private set; }
         public long AircraftId { get; private set; }
         public DateTime DepartureDate { get; private set; }
         public long DepartureAirportId { get; private set; }
@@ -24,7 +24,7 @@ namespace BookingApp.Fligth.Domain.Flights
 
         public static Flight Create(long id, string flightNumber, long aircraftId,
             long departureAirportId, DateTime departureDate, DateTime arriveDate,
-            long arriveAirportId, decimal durationMinutes, DateTime flightDate, FlightStatus status,
+            long arriveAirportId, decimal durationMinutes, DateTime flightDate, 
             decimal price, bool isDeleted = false)
         {
             var flight = new Flight
@@ -38,16 +38,16 @@ namespace BookingApp.Fligth.Domain.Flights
                 ArriveAirportId = arriveAirportId,
                 DurationMinutes = durationMinutes,
                 FlightDate = flightDate,
-                Status = status,
                 Price = price,
                 IsDeleted = isDeleted,
             };
             return flight;
         }
 
+       
         public void Update(long id, string flightNumber, long aircraftId,
         long departureAirportId, DateTime departureDate, DateTime arriveDate,
-        long arriveAirportId, decimal durationMinutes, DateTime flightDate, FlightStatus status,
+        long arriveAirportId, decimal durationMinutes, DateTime flightDate, 
         decimal price, bool isDeleted = false)
         {
             FlightNumber = flightNumber;
@@ -58,7 +58,6 @@ namespace BookingApp.Fligth.Domain.Flights
             ArriveAirportId = arriveAirportId;
             DurationMinutes = durationMinutes;
             FlightDate = flightDate;
-            Status = status;
             Price = price;
             IsDeleted = isDeleted;
         }

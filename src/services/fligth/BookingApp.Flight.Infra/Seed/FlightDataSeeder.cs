@@ -94,7 +94,7 @@ namespace BookingApp.Flight.Infra.Seed
                Fligth.Domain.Flights.Flight.Create(1, "BD467", 1, 1, new DateTime(2022, 1, 31, 12, 0, 0),
                     new DateTime(2022, 1, 31, 14, 0, 0),
                     2, 120m,
-                    new DateTime(2022, 1, 31), FlightStatus.Completed,
+                    new DateTime(2022, 1, 31), 
                     8000)
             };
                 await flightDbContext.Flights.AddRangeAsync(flights);

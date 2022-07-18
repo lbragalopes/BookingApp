@@ -1,4 +1,5 @@
 ﻿using BookingApp.Flight.API.Application.CreateFlight;
+using BookingApp.Flight.API.Application.DeleteFlight;
 using BookingApp.Flight.API.Application.GetAvailableFlights;
 using BookingApp.Flight.API.Application.GetFlightById;
 using BookingApp.Flight.API.Application.UpdateFlight;
@@ -55,6 +56,16 @@ namespace BookingApp.Flight.API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Update(UpdateFlightCommand command, CancellationToken cancellationToken)
+        {
+            var result = await mediator.Send(command, cancellationToken);
+
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> Delete(DeleteFlightCommand command, CancellationToken cancellationToken)
         {
             var result = await mediator.Send(command, cancellationToken);
 
